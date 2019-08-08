@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class First {
     public static void main(String[] args) {
         
-        /*
         Scanner userIn = new Scanner(System.in);
 
         String introMsg = "Bienvenido al sistema vacacional de Coca Cola (No pepsi gas weyyyyy >:u)";
@@ -47,18 +46,13 @@ public class First {
 
             }
 
-            System.out.println("El trabajador " + name + " tiene derecho a " + vacDays + " dias de vacaciones al a" + nWithAcentMark + "o \n");
+            System.out.println("El trabajador \"" + name + "\" tiene derecho a " + vacDays + " dias de vacaciones al a" + nWithAcentMark + "o \n");
 
         }
 
         else System.out.println("Error: Departamento inexistente \n");
-        */
 
-        int x = 5;
-        double y = 6.5;
-        String text = "hi" + (x + y);
-
-        System.out.println(text + (x + y));
+        userIn.close();
 
     }
 
