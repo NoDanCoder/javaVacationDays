@@ -7,7 +7,7 @@ public class First {
         Scanner userIn = new Scanner(System.in);
 
         // Creo la variable de titulo, no lo escribo directamente en el "print", ya que nesectio saber su "Lenght"
-        String msgTitle = "*Bienvenido al sistema vacacional de Coca Cola (No pepsi gas weyyyyy >:u)*";
+        String msgTitle = "* Bienvenido al sistema vacacional de Coca Cola (No pepsi gas weyyyyy >:u) *";
 
         // Uso la funcion "stringMultiply" que cree abajo, le intuducto el caracter a repetir, y lo repito segun el largo el titulo
         String borderTitle = stringMultiply("*", msgTitle.length());
@@ -17,20 +17,16 @@ public class First {
         System.out.println(msgTitle);
         System.out.println(borderTitle + "\n");
 
-        // Pido el nombre del empleado y uso el objeto escaner anteriormente creado para la entrada del usuario, hago lo mismo con la clave de departamento
-        System.out.print("Nombre del empleado: ");
-        String name = userIn.nextLine();
-
-        System.out.print("Clave de departamento : ");
-        int dept = userIn.nextInt();
+        // Uso la funcion "getInfoStr" e "getInfoInt" que cree abajo, pido el nombre del empleado y la clave de departamento
+        String name = getInfoStr("Nombre del empleado: ", userIn);
+        int dept = getInfoInt("Clave de departamento : ", userIn);
 
         // solo existen tres departementos, si ingresa uno inexistente, el programa no va mas
         if (dept >= 1 && dept <= 3) {
 
             // creo el caracter "ñ", e igualmente pido los años de antiguedad
             String nWithAcentMark = "\u00f1";
-            System.out.print("Antiguedad (A" + nWithAcentMark + "os) : ");
-            int antiquity = userIn.nextInt();
+            int antiquity = getInfoInt("Antiguedad (A" + nWithAcentMark + "os) : ", userIn);
 
             // variable para almacenar los dias de vacaciones
             int vacDays = 0;
@@ -78,12 +74,26 @@ public class First {
         // Creo un objeto "dummie" para contruir la palabra
         StringBuilder sb = new StringBuilder();
 
-        // agrego al objeto constructor el palabra n veces, el numero dado
+        // agreto al objeto constructor el palabra n veces, el numero dado
         for (int i = 0; i < n; i++) {
             sb.append(s);
         }
 
-        // Retorno la palabra ya repetida/construida
+        // Retorno la palabra ya repetida
         return sb.toString();
+    }
+
+    // Funcion donde imprimo el mensaje y devuelvo la entrada del usuario, pido el texto y el scanner, (String)
+    public static String getInfoStr(String s, Scanner p){
+        System.out.print(s);
+        String sb = p.nextLine();
+        return sb;
+    }
+
+    // Igual que la funcion "getInfoStr" solo que es para Int
+    public static int getInfoInt(String s, Scanner p){
+        System.out.print(s);
+        int sb = p.nextInt();
+        return sb;
     }
 }
