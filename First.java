@@ -78,12 +78,12 @@ public class First {
         // Creo un objeto "dummie" para contruir la palabra
         StringBuilder sb = new StringBuilder();
 
-        // agreto al objeto constructor el palabra n veces, el numero dado
+        // agrego al objeto constructor el palabra n veces, el numero dado
         for (int i = 0; i < n; i++) {
             sb.append(s);
         }
 
-        // Retorno la palabra ya repetida
+        // Retorno la palabra ya repetida/construida
         return sb.toString();
     }
 }
